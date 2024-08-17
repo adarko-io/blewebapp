@@ -1,17 +1,29 @@
+// ******************************************************************************
+// * @file    index.js
+// * @author  MCD Application Team
+// *
+//  ******************************************************************************
+//  * @attention
+//  *
+//  * Copyright (c) 2022-2023 STMicroelectronics.
+//  * All rights reserved.
+//  *
+//  * This software is licensed under terms that can be found in the LICENSE file
+//  * in the root directory of this software component.
+//  * If no LICENSE file comes with this software, it is provided AS-IS.
+//  *
+//  ******************************************************************************
 import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import ReactDOM from 'react-dom';
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
+import ReactMarkdown from 'react-markdown'
+
+import App from './App';
+
+
+ReactDOM.render(
   <React.StrictMode>
     <App />
-  </React.StrictMode>
+  </React.StrictMode>,
+  document.getElementById('root')
 );
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
