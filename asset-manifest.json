@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.css": "/blewebapp/static/css/main.ca918139.css",
-    "main.js": "/blewebapp/static/js/main.ecb2ba5f.js",
-    "static/media/st-logo.svg": "/blewebapp/static/media/st-logo.dade5ba816e8fc24440d72d544e4e3ee.svg",
-    "index.html": "/blewebapp/index.html",
-    "static/media/lightOnBlue.svg": "/blewebapp/static/media/lightOnBlue.6d92c830e1f9893d1ee3e22d819e5f13.svg",
-    "static/media/lightOnPink.svg": "/blewebapp/static/media/lightOnPink.f423eb235daf97a4d53b6c6c7b2e7685.svg",
-    "static/media/iconInfo.svg": "/blewebapp/static/media/iconInfo.3d5c23bf468cdab351bc3d0cd8037104.svg",
-    "static/media/iconInfoPink.svg": "/blewebapp/static/media/iconInfoPink.8d1cfdd48d5d61f8071893bf84b03584.svg",
-    "static/media/lightOffBlue.svg": "/blewebapp/static/media/lightOffBlue.48ac0e3e63b831919f2f67234bc08b4d.svg",
-    "static/media/lightOffPink.svg": "/blewebapp/static/media/lightOffPink.21aafe728c6958adff78a0eef3c5bafc.svg",
-    "main.ca918139.css.map": "/blewebapp/static/css/main.ca918139.css.map",
-    "main.ecb2ba5f.js.map": "/blewebapp/static/js/main.ecb2ba5f.js.map"
+    "main.css": "/static/css/main.ca918139.css",
+    "main.js": "/static/js/main.aa537292.js",
+    "static/media/st-logo.svg": "/static/media/st-logo.dade5ba816e8fc24440d72d544e4e3ee.svg",
+    "index.html": "/index.html",
+    "static/media/lightOnBlue.svg": "/static/media/lightOnBlue.6d92c830e1f9893d1ee3e22d819e5f13.svg",
+    "static/media/lightOnPink.svg": "/static/media/lightOnPink.f423eb235daf97a4d53b6c6c7b2e7685.svg",
+    "static/media/iconInfo.svg": "/static/media/iconInfo.3d5c23bf468cdab351bc3d0cd8037104.svg",
+    "static/media/iconInfoPink.svg": "/static/media/iconInfoPink.8d1cfdd48d5d61f8071893bf84b03584.svg",
+    "static/media/lightOffBlue.svg": "/static/media/lightOffBlue.48ac0e3e63b831919f2f67234bc08b4d.svg",
+    "static/media/lightOffPink.svg": "/static/media/lightOffPink.21aafe728c6958adff78a0eef3c5bafc.svg",
+    "main.ca918139.css.map": "/static/css/main.ca918139.css.map",
+    "main.aa537292.js.map": "/static/js/main.aa537292.js.map"
   },
   "entrypoints": [
     "static/css/main.ca918139.css",
-    "static/js/main.ecb2ba5f.js"
+    "static/js/main.aa537292.js"
   ]
 }
