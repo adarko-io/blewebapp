@@ -25,6 +25,7 @@ import { BrowserRouter, Route, Link, Routes } from "react-router-dom";
 import './styles/style.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import bootstrap from 'bootstrap';
+import Datalogger from './onglets/Datalogger';
 
 
 
@@ -43,7 +44,10 @@ allServices.map(service => {
     listItems.push(<li className="liProfile"><Link to="/HR">Heart Rate</Link></li>);
   }
   if(service.service.uuid === "0000fe40-cc7a-482a-984a-7f2ed5b3e58f"){
-    listItems.push(<li className="liProfile"><Link to="/P2P">Datalogger Configuration</Link></li>);
+    listItems.push(<li className="liProfile"><Link to="/P2P">P2P Server</Link></li>);
+  }
+  if(service.service.uuid === "0000ce10-cc7a-482a-984a-7f2ed5b3e58f"){
+    listItems.push(<li className="liProfile"><Link to="/Datalogger">Datalogger Configuration</Link></li>);
   }
   if(service.service.uuid === "0000feb0-cc7a-482a-984a-7f2ed5b3e58f"){
     listItems.push(<li className="liProfile"><Link to="/P2P_ROUTER">P2P Router</Link></li>);
@@ -73,6 +77,7 @@ allServices.map(service => {
             <Route path="/HR" element={isDisconnected ? null : <HeartRate allCharacteristics={allCharacteristics}></HeartRate>} />
             <Route path="/P2P" element={isDisconnected ? null : <P2Pserver allCharacteristics={allCharacteristics}></P2Pserver>} />
             <Route path="/P2P_ROUTER" element={isDisconnected ? null : <P2Prouter allCharacteristics={allCharacteristics}></P2Prouter>} />
+            <Route path="/Datalogger" element={isDisconnected ? null : <Datalogger allCharacteristics={allCharacteristics}></Datalogger>} />
             <Route path="/OTA" element={isDisconnected ? null : <Ota allCharacteristics={allCharacteristics}></Ota>} />
             <Route path="/HT" element={isDisconnected ? null : <HealthThermometer allCharacteristics={allCharacteristics}></HealthThermometer>} />
           </Routes>
