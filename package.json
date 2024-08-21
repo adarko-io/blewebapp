@@ -1,5 +1,6 @@
 {
-  "name": "bleappinterface",
+  "homepage": "https://bleappconf.github.io/blewebapp",
+  "name": "blewebapp",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
