@@ -1,5 +1,5 @@
 {
-  "homepage": "https://bleappconf.github.io/blewebapp",
+  "homepage": "https://bleappconf.github.io",
   "name": "blewebapp",
   "version": "0.1.0",
   "private": true,
@@ -20,6 +20,7 @@
     "react-scripts": "5.0.1",
     "sass": "^1.77.8",
     "save-dev": "^0.0.1-security",
+    "serve": "^14.2.3",
     "web-vitals": "^2.1.4"
   },
   "scripts": {

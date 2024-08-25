@@ -3,5 +3,6 @@ RUN mkdir /app
 WORKDIR /app
 COPY package.json /app
 RUN npm install
+RUN npm install -g serve
 COPY . /app
-CMD ["npm", "start"]
+CMD ["serve -s", "build -l 3006"]
