@@ -191,7 +191,7 @@ const Header = (props) => {
             <div className="container ">
                 <div className="row">
                     <div className="col-12">
-                        <img className="logoST" src={logoST} alt="logo st"></img>
+                        ADARKO
                     </div>
                 </div>
                 <div className="textTitle">
