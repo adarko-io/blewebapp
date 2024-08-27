@@ -43,9 +43,9 @@ allServices.map(service => {
   if(service.service.uuid === "0000180d-0000-1000-8000-00805f9b34fb"){
     listItems.push(<li className="liProfile"><Link to="/HR">Heart Rate</Link></li>);
   }
-  if(service.service.uuid === "0000fe40-cc7a-482a-984a-7f2ed5b3e58f"){
-    listItems.push(<li className="liProfile"><Link to="/P2P">P2P Server</Link></li>);
-  }
+  // if(service.service.uuid === "0000fe40-cc7a-482a-984a-7f2ed5b3e58f"){
+  //   listItems.push(<li className="liProfile"><Link to="/P2P">P2P Server</Link></li>);
+  // }
   if(service.service.uuid === "0000ce10-cc7a-482a-984a-7f2ed5b3e58f"){
     listItems.push(<li className="liProfile"><Link to="/Datalogger">Datalogger Configuration</Link></li>);
   }
@@ -75,7 +75,7 @@ allServices.map(service => {
             {/* If isDisconnected === true, element = null eslse element = <component></component> */}
             <Route path="/DT" element={isDisconnected ? null : <DataThroughput allCharacteristics={allCharacteristics}></DataThroughput>} />
             <Route path="/HR" element={isDisconnected ? null : <HeartRate allCharacteristics={allCharacteristics}></HeartRate>} />
-            <Route path="/P2P" element={isDisconnected ? null : <P2Pserver allCharacteristics={allCharacteristics}></P2Pserver>} />
+            {/* <Route path="/P2P" element={isDisconnected ? null : <P2Pserver allCharacteristics={allCharacteristics}></P2Pserver>} /> */}
             <Route path="/P2P_ROUTER" element={isDisconnected ? null : <P2Prouter allCharacteristics={allCharacteristics}></P2Prouter>} />
             <Route path="/Datalogger" element={isDisconnected ? null : <Datalogger allCharacteristics={allCharacteristics}></Datalogger>} />
             <Route path="/OTA" element={isDisconnected ? null : <Ota allCharacteristics={allCharacteristics}></Ota>} />

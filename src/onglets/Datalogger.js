@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import imagelightOffBlue from '../images/lightOffBlue.svg';
 import imagelightOnBlue from '../images/lightOnBlue.svg';
 import imagelightOffPink from '../images/lightOffPink.svg';
@@ -22,7 +22,7 @@ const Datalogger = (props) => {
         break;
       case "0000ce11-8e22-4541-9d4c-21edae82ed19":
         ReadWriteCharacteristic = element;
-        onReadButtonClick();
+        //onReadButtonClick();
         break;
       case "0000fe11-8e22-4541-9d4c-21edae82ed19":
         rebootCharacteristic = element;
@@ -95,8 +95,15 @@ const Datalogger = (props) => {
     ] = result.split(',');
 
     // Set the form values
-    //document.getElementById('activationToggle').checked = activationStatus === '1';
-    //setIsActivated(activationStatus === '1'); // Update the activation state
+    
+    setIsActivated(activationStatus === '1'); // Update the activation state
+    if(activationStatus === '1'){
+      setIsActivated(true);
+      document.getElementById('activationToggle').checked = true;
+    }else{
+      setIsActivated(false);
+      document.getElementById('activationToggle').checked = false;
+    }
     document.getElementById('apnInput').value = apn;
     document.getElementById('intervalSelect').value = interval;
     document.getElementById('protocolSelect').value = protocol;
@@ -122,6 +129,10 @@ const Datalogger = (props) => {
       document.getElementById('imageLightBlue').src = imagelightOffPink;
     }
   }
+
+  useEffect(() => {
+    onReadButtonClick();
+  }, []);
 
   return (
     <div className="container-fluid">
@@ -175,8 +186,8 @@ const Datalogger = (props) => {
                   <select className="form-select" id="protocolSelect" required disabled={!isActivated}>
                     <option value="0">TCP</option>
                     <option value="1">UDP</option>
-                    <option value="2">HTTP</option>
-                    <option value="3">HTTPS</option>
+                    {/* <option value="2">HTTP</option>
+                    <option value="3">HTTPS</option> */}
                   </select>
                 </div>
               </div>
