@@ -191,10 +191,10 @@ const Header = (props) => {
             <div className="container ">
                 <div className="row">
                     <div className="col-12">
-                        ADARKO
+                        <h1>ADARKO</h1>
                     </div>
                 </div>
-                <div className="textTitle">
+                <div className="textitle">
                     Datalogger
                 </div>
                 <div className="row mt-3">             
