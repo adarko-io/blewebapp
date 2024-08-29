@@ -270,12 +270,12 @@ const Ota = (props) => {
     <div className="container-fluid">
         <div className="container">
           
-          <div className="input-group">
+          {/* <div className="input-group">
             <div className="input-group-text">
               <input className="form-check-input mt-0" type="radio" value="userData" name='selectAction' onClick={onActionRadioButtonClick} ></input>
             </div>
             <input type="text" disabled={true} className="form-control" aria-label="Text input with radio button" value="User Configuration Data Update"></input>
-            </div>
+            </div> */}
           <div className="input-group">
             <div className="input-group-text">
               <input className="form-check-input mt-0" type="radio" value="application" name='selectAction' onClick={onActionRadioButtonClick} ></input>
@@ -283,10 +283,10 @@ const Ota = (props) => {
             <input type="text" disabled={true} className="form-control" aria-label="Text input with radio button" value="Application Update"></input>
           </div>
 
-          <div id='userDataSelectFilePart' style={{"display": "none"}}>
-            <div id='userDataBinaryList' style={{"display": "block"}}>
+          <div id='userDataSelectFilePart' style={{"display": "none"}} disabled="true">
+            <div id='userDataBinaryList' style={{"display": "block"}} disabled="true">
               <h3>User Configuration Data
-                <OverlayTrigger
+                <OverlayTrigger disabled="true"
                   trigger={['hover', 'focus']}
                   placement="bottom"
                   overlay={popoverUserData}>
@@ -315,15 +315,15 @@ const Ota = (props) => {
             </div> 
             <div className="input-group mb-3">
               <span className="input-group-text" id="startSectorChoise">Address 0x</span>
-              <input type="text" className="form-control" placeholder="..." aria-describedby="startSectorChoise" maxLength="6" id="startSectorInput" ></input>
+              <input type="text" disabled="true" className="form-control" placeholder="..." aria-describedby="startSectorChoise" maxLength="6" id="startSectorInput" ></input>
             </div>
-            <div className="input-group mb-3">
+            {/* <div className="input-group mb-3">
               <label>Setting manualy the number of sector &nbsp;</label> 
               <label class="containerCheckBox" onClick={checkBoxClicForNbSector}>
                 <input type="checkbox"id="checkboxNbSector" />
                 <span class="checkmark"></span>
               </label>
-            </div>
+            </div> */}
             
             <div className="input-group mb-3">
               <span className="input-group-text" id="nbSectorChoise" >Nb Sector</span>
