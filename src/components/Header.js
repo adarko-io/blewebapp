@@ -207,11 +207,11 @@ const Header = (props) => {
                     <div className="d-grid col-xs-12 col-sm-4 col-md-4 col-lg-4 p-2">
                     <button className="defaultButton" type="button" onClick={disconnection}>Disconnect</button>
                     </div>
-                    <div className="d-grid col-xs-12 col-sm-4 col-md-4 col-lg-4 p-2">
+                    {/* <div className="d-grid col-xs-12 col-sm-4 col-md-4 col-lg-4 p-2">
                         <button class="defaultButton" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasLogPanel" aria-controls="offcanvasLogPanel">
                             Info
                         </button>
-                    </div>
+                    </div> */}
                     <div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="offcanvasLogPanel" aria-labelledby="offcanvasLogPanelLabel">
                         <div class="offcanvas-header">
                             <h5 class="offcanvas-title" id="offcanvasLogPanelLabel">Application log panel</h5>  
