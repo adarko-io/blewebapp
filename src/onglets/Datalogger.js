@@ -55,14 +55,14 @@ const Datalogger = (props) => {
         ReadWriteCharacteristic = element;
         //onReadButtonClick();
         break;
-      case "0000ce13-8e22-4541-9d4c-21edae82ed19":
+      case "0000ce12-8e22-4541-9d4c-21edae82ed19":
         ReadCharacteristic = element;
         // ReadInfo();
         break;
       case "0000ce14-8e22-4541-9d4c-21edae82ed19":
         ReadWriteCharacteristicLoggerData = element;
         break;
-      case "0000ce12-8e22-4541-9d4c-21edae82ed19":
+      case "0000ce15-8e22-4541-9d4c-21edae82ed19":
         ReadCharacteristicLoggerSize = element;
         break;
       default:
