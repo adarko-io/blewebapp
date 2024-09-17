@@ -6,7 +6,7 @@ const Datalogger = (props) => {
   let ReadWriteCharacteristic;
   let ReadCharacteristic;
   let ReadWriteCharacteristicLoggerData;
-  let ReadCharacteristicLoggerSize;
+  let ReadCharacteristicLoggerLog;
 
 
   const [isActivated, setIsActivated] = useState(false); // To track the activation status
@@ -21,12 +21,15 @@ const Datalogger = (props) => {
     firmwareVersion: '',
     timestamp: '',
     Rssi: '',
-    SNR: ''
+    SNR: '',
+    BatteryV: '',
+    BankV: ''
   });
 
   const [logEntries, setLogEntries] = useState([]);
 
-
+  const [lteLogOutput, setLteLogOutput] = useState('');
+  
   const [currentPage, setCurrentPage] = useState(1);
   const entriesPerPage = 24;
   // Derived state for pagination
@@ -63,7 +66,7 @@ const Datalogger = (props) => {
         ReadWriteCharacteristicLoggerData = element;
         break;
       case "0000ce15-8e22-4541-9d4c-21edae82ed19":
-        ReadCharacteristicLoggerSize = element;
+        ReadCharacteristicLoggerLog = element;
         break;
       default:
         console.log("# No characteristics found..");
@@ -106,11 +109,11 @@ const Datalogger = (props) => {
       const dataloggerType = document.getElementById('dataloggerTypeSelect').value;
       const antenna = document.getElementById('antennaSelect').value;
       const ntpserver = document.getElementById('ntpInput').value;
-      const prescaler = 1;
-      const fwdflow = 0;
-      const revflow = 0;
+      var prescaler = 1;
+      var fwdflow = 0;
+      var revflow = 0;
 
-      if (dataloggerType === 1) {
+      if (dataloggerType === '1') {
         prescaler = document.getElementById('prescalerSelect').value;
         fwdflow = forwardFlow;
         revflow = reverseFlow;
@@ -118,7 +121,7 @@ const Datalogger = (props) => {
 
       // Combine the form values into a single string or binary format
       const combinedValue = `${activationStatus},${apn},${interval},${protocol},${url},${port},${dataloggerType},${antenna},${ntpserver},${prescaler},${fwdflow},${revflow}`;
-
+      console.log(combinedValue)
       // Convert the combined string to a Uint8Array
       let encoder = new TextEncoder();
       let valueToWrite = encoder.encode(combinedValue);
@@ -291,6 +294,24 @@ const Datalogger = (props) => {
       console.log('Error:', error);
     }
   };
+
+
+  const ReadDataLoggerLog = async () => {
+    console.log('ReadDataLoggerLog');
+    try {
+      let logs = '';
+      for (let i = 0; i <= 20; i++) {
+        const value = await ReadCharacteristicLoggerLog.characteristic.readValue();
+        const decoder = new TextDecoder('utf-8');
+        const result = decoder.decode(value);
+        console.log('ReadDataLoggerLog result', result);
+        logs += result + '\n';
+      }
+      setLteLogOutput(logs); // Update the state with the accumulated log data
+    } catch (error) {
+      console.log('Error:', error);
+    }
+  };
   // const ReadDataLoggerSize = async () => {
   //   try {
 
@@ -332,16 +353,18 @@ const Datalogger = (props) => {
       const decoder = new TextDecoder('utf-8');
       const result = decoder.decode(value);
 
-      const [EUI, firmwareVersion, epochTimeStampUTC, Rssi, SNR] = result.split(',');
+      const [EUI, firmwareVersion, epochTimeStampUTC, Rssi, SNR, BatteryV, BankV] = result.split(',');
       const date = new Date(parseInt(epochTimeStampUTC) * 1000); // Converting epoch to milliseconds
       const readableDate = date.toUTCString(); // Converts date to UTC string
-
+      console.log('Read value:', result);
       setDeviceInfo({
         EUI,
         firmwareVersion,
         timestamp: readableDate + " (UTC)", // Adding " (UTC)" suffix
         Rssi,
-        SNR
+        SNR,
+        BatteryV,
+        BankV
       });
 
     } catch (error) {
@@ -470,6 +493,18 @@ const Datalogger = (props) => {
                   <label htmlFor="snrInput" className="col-sm-4 col-form-label text-start">BER</label>
                   <div className="col-sm-8">
                     <input type="text" id="snrInput" className="form-control text-end" value={deviceInfo.SNR} />
+                  </div>
+                </div>
+                <div className="mb-3 row">
+                  <label htmlFor="batteryInput" className="col-sm-4 col-form-label text-start">Battery (V)</label>
+                  <div className="col-sm-8">
+                    <input type="text" id="batteryInput" className="form-control text-end" value={deviceInfo.BatteryV} />
+                  </div>
+                </div>
+                <div className="mb-3 row">
+                  <label htmlFor="backupInput" className="col-sm-4 col-form-label text-start">Backup </label>
+                  <div className="col-sm-8">
+                    <input type="text" id="backupInput" className="form-control text-end" value={deviceInfo.BankV} />
                   </div>
                 </div>
               </fieldset>
@@ -655,6 +690,7 @@ const Datalogger = (props) => {
           <div className="col-12 mb-3">
             <button type="button" className="btn btn-primary me-2" onClick={ReadDataLoggerSize}>Read Logged Data</button>
             <button type="button" className="btn btn-secondary" onClick={exportToCSV}>Export Data</button>
+
           </div>
           <table className="table">
             <thead>
@@ -700,6 +736,20 @@ const Datalogger = (props) => {
               ))}
             </ul>
           </nav>
+        </div>
+        <div className='row justify-content-center mt-4 border mx-2 my-2'>
+          <div className="col-12 mb-3">
+            <button type="button" className="btn btn-primary me-2" onClick={ReadDataLoggerLog}>LTE Log</button>
+          </div>
+          <div className="col-12">
+            <textarea
+              className="form-control"
+              id="lteLogOutput"
+              rows="10"
+              value={lteLogOutput}
+              readOnly
+            ></textarea>
+          </div>
         </div>
 
       </div>

@@ -19,4 +19,4 @@ COPY . /app
 RUN npm run build
 
 # Command to run the application using serve
-CMD ["serve", "-s", "build", "-l", "3006"]
+CMD ["serve", "-s", "build", "-l", "3066"]
