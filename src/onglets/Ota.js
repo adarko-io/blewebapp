@@ -40,13 +40,13 @@ const Ota = (props) => {
   // Filtering the different datathroughput characteristics
   props.allCharacteristics.map(element => {
     switch (element.characteristic.uuid) {
-      case "0000fe22-8e22-4541-9d4c-21edae82ed19":
+      case "0000ab22-8e22-4541-9d4c-21edae82ed19":
         writeAddressCharacteristic = element;
         break;
-      case "0000fe23-8e22-4541-9d4c-21edae82ed19":
+      case "0000ab23-8e22-4541-9d4c-21edae82ed19":
         indicateCharacteristic = element;
         break;
-      case "0000fe24-8e22-4541-9d4c-21edae82ed19":
+      case "0000ab24-8e22-4541-9d4c-21edae82ed19":
         writeWithoutResponseCharacteristic = element;
         break;
       default:

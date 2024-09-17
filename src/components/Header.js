@@ -54,7 +54,7 @@ const Header = (props) => {
                 }],
 
 
-                optionalServices: ['0000fe40-cc7a-482a-984a-7f2ed5b3e58f', '0000180d-0000-1000-8000-00805f9b34fb','0000fe80-cc7a-482a-984a-7f2ed5b3e58f','0000fe80-8e22-4541-9d4c-21edae82fe80','0000fe20-cc7a-482a-984a-7f2ed5b3e58f', '0000feb0-cc7a-482a-984a-7f2ed5b3e58f', '00001809-0000-1000-8000-00805f9b34fb','0000ce10-cc7a-482a-984a-7f2ed5b3e58f'] // service uuid of [P2P service, Heart Rate service, DataThroughput, Ota, P2P Router, Health Thermomiter]
+                optionalServices: ['0000fe40-cc7a-482a-984a-7f2ed5b3e58f', '0000180d-0000-1000-8000-00805f9b34fb','0000fe80-cc7a-482a-984a-7f2ed5b3e58f','0000fe80-8e22-4541-9d4c-21edae82fe80','0000ab20-cc7a-482a-984a-7f2ed5b3e58f', '0000feb0-cc7a-482a-984a-7f2ed5b3e58f', '00001809-0000-1000-8000-00805f9b34fb','0000ce10-cc7a-482a-984a-7f2ed5b3e58f'] // service uuid of [P2P service, Heart Rate service, DataThroughput, Ota, P2P Router, Health Thermomiter]
             }) 
                 .then(device => { 
                     myDevice = device;

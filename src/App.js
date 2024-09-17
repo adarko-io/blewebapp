@@ -52,7 +52,7 @@ allServices.map(service => {
   if(service.service.uuid === "0000feb0-cc7a-482a-984a-7f2ed5b3e58f"){
     listItems.push(<li className="liProfile"><Link to="/P2P_ROUTER">P2P Router</Link></li>);
   }
-  if(service.service.uuid === "0000fe20-cc7a-482a-984a-7f2ed5b3e58f"){
+  if(service.service.uuid === "0000ab20-cc7a-482a-984a-7f2ed5b3e58f"){
     listItems.push(<li className="liProfile"><Link to="/OTA">Firmware Update Over The Air</Link></li>);
   }
   if(service.service.uuid === "00001809-0000-1000-8000-00805f9b34fb"){
