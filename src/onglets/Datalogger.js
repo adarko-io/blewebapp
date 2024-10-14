@@ -548,8 +548,8 @@ const Datalogger = (props) => {
                 <label htmlFor="intervalSelect" className="col-sm-4 col-form-label text-start">Interval</label>
                 <div className="col-sm-8">
                   <select className="form-select" id="intervalSelect" required disabled={!isActivated}>
-                    <option value="6">6 Hours</option>
-                    <option value="12">12 Hours</option>
+                    {/* <option value="6">6 Hours</option>
+                    <option value="12">12 Hours</option> */}
                     <option value="24">24 Hours</option>
                     <option value="48">48 Hours</option>
                     <option value="168">1 Week</option>
