@@ -1,22 +1,24 @@
-FROM node:alpine
+FROM node:22-bullseye
 
-# Create the application directory
-RUN mkdir /app
-
-# Set the working directory inside the container
 WORKDIR /app
 
-# Copy the package.json file and install dependencies
-COPY package.json /app
+# Copy package.json and lock file first to leverage Docker's layer caching
+COPY package.json package-lock.json ./
+
+# Install dependencies
 RUN npm install
 
-# Install serve globally
-RUN npm install -g serve
+# Add the missing plugin to dependencies
+RUN npm install --save-dev @babel/plugin-proposal-private-property-in-object
 
-# Copy the entire application to the container
-COPY . /app
+# Copy the rest of the application files
+COPY . .
 
+# Build the application
 RUN npm run build
 
-# Command to run the application using serve
+# Expose the application port
+EXPOSE 3066
+
+# Command to serve the build
 CMD ["serve", "-s", "build", "-l", "3066"]
