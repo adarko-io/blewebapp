@@ -676,6 +676,13 @@ const Datalogger = (props) => {
                 </>
               )}
 
+              <div className="mb-3 row align-items-center">
+                <label htmlFor="otaInput" className="col-sm-4 col-form-label text-start">OTA Base URL</label>
+                <div className="col-sm-8">
+                  <input type="text" className="form-control" id="otaInput" placeholder="Enter OTA Base URL" required disabled={!isActivated} />
+                </div>
+              </div>
+
               <div className="row">
                 <div className="col-sm-8 offset-sm-4 text-start">
                   <button type="button" className="btn btn-secondary me-2" onClick={onReadButtonClick}>Read</button>
