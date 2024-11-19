@@ -194,7 +194,7 @@ const Header = (props) => {
             <div className="container ">
                 <div className="row">
                     <div className="col-12">
-                        <h1>Datalogger</h1>
+                        <h1>AQUAMET</h1>
                     </div>
                 </div>
                 <div className="textitle">

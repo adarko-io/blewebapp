@@ -1,4 +1,4 @@
-FROM node:22-bullseye
+FROM node:22-alpine
 
 WORKDIR /app
 
@@ -10,6 +10,8 @@ RUN npm install
 
 # Add the missing plugin to dependencies
 RUN npm install --save-dev @babel/plugin-proposal-private-property-in-object
+
+RUN npm install -g serve
 
 # Copy the rest of the application files
 COPY . .
