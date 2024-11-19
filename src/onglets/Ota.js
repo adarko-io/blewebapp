@@ -260,8 +260,7 @@ const Ota = (props) => {
 
   const popoverApplicationBinary = (
     <Popover id="popover-trigger-hover-focus" title="Popover bottom">
-      <strong>Info :</strong> Choose either a file from your device or file fetch from the STMicroelectronics Hotspot. <br />
-      Then choose the first sector address. (default 0x07C000).
+      
     </Popover>
   );
 
